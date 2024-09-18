@@ -1,0 +1,246 @@
+/* Reset and base styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cinzel', serif;
+    color: #e0e0e0; /* Pale text for readability */
+    background-color: #1b1b1b; /* Darker background */
+    background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+    background-attachment: fixed;
+    margin: 20px;
+    line-height: 1.6;
+}
+
+/* Font - Gothic style */
+h1, h2, h3, h4 {
+    color: #b3001b; /* Dark red color */
+    font-family: 'Cinzel Decorative', cursive;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 3px #000; /* Subtle shadow for depth */
+    margin-bottom: 20px;
+    font-size: 2.2em;
+}
+
+p {
+    color: #b3b3b3;
+    margin-bottom: 15px;
+}
+
+/* Container styles */
+.event-details, .sessions, form, .payment-modal {
+    background-color: #2e2e2e; /* Deep charcoal */
+    border: 1px solid #3a3a3a;
+    color: #e0e0e0;
+    padding: 20px;
+    margin-top: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8); /* Dark shadow */
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+
+/* Hover effects with darkening */
+.event-details:hover, .sessions:hover, form:hover, .payment-modal:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.9); /* Enhanced shadow */
+}
+
+/* Color Palette Enhancements */
+body {
+    color: #e0e0e0;
+}
+
+.event-details, .sessions, form, .payment-modal {
+    background-color: #2e2e2e;
+}
+
+h1, h2, h3, h4 {
+    color: #b3001b; /* Dark red */
+}
+
+button, input {
+    background-color: #3b3b3b; /* Darker gray */
+    border-color: #555;
+    color: #f0f0f0;
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #4a4a4a;
+}
+
+button:active {
+    background-color: #2d2d2d;
+}
+
+label {
+    color: #cfcfcf;
+}
+
+/* Dark, Gothic Palette */
+.goth-button {
+    background-color: #4a4a4a;
+    border-color: #1f1f1f;
+}
+
+/* Goth button hover effect */
+.goth-button:hover {
+    background-color: #5c5c5c;
+}
+
+/* Input and Button Styling */
+input[type="text"], input[type="email"], input[type="checkbox"] {
+    padding: 12px;
+    width: 90%;
+    margin-bottom: 15px;
+    border: 2px solid #4a4a4a;
+    border-radius: 5px;
+    background-color: #333333;
+    color: #e0e0e0;
+    font-size: 1.1em;
+    transition: border-color 0.3s ease-in-out;
+}
+
+/* Focus effect */
+input:focus {
+    border-color: #b3001b; /* Subtle blood-red highlight */
+    background-color: #444;
+    outline: none;
+}
+
+button {
+    padding: 12px 25px;
+    background-color: #444444;
+    border: 1px solid #1f1f1f;
+    border-radius: 8px;
+    color: #f5f5f5;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 1.1em;
+}
+
+/* Gradient background for inputs and buttons */
+button, input {
+    background: linear-gradient(145deg, #333333, #444444);
+}
+
+/* Sessions Styling */
+.sessions h4 {
+    color: #b3001b; /* Dark red */
+    font-size: 1.3em;
+    text-shadow: 1px 1px 4px #000; /* Subtle shadow */
+    margin-bottom: 10px;
+}
+
+.sessions p {
+    color: #b3b3b3;
+    font-size: 0.9em;
+}
+
+label {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 1.1em;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Payment Modal */
+.payment-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #2e2e2e;
+    padding: 40px;
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+    z-index: 10;
+    animation: fadeIn 0.5s ease-in;
+}
+
+/* Modal content styling */
+.payment-modal h2 {
+    color: #b3001b; /* Dark red */
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Gradient effect for modal inputs */
+.payment-modal input[type="text"] {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid #666;
+    background-color: #333;
+    color: #f5f5f5;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 1.1em;
+    background: linear-gradient(145deg, #2e2e2e, #3b3b3b);
+}
+
+/* Gradient effect for modal button */
+.payment-modal button {
+    display: block;
+    width: 100%;
+    margin: 20px 0;
+    background-color: #4a4a4a;
+    border-radius: 6px;
+    background: linear-gradient(145deg, #333333, #444444);
+}
+
+.payment-modal button:hover {
+    background-color: #5c5c5c;
+}
+
+/* Modal overlay */
+.payment-modal:before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: -1;
+}
+
+/* Keyframes for modal animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Subtle pulse effect */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.03);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.goth-button {
+    animation: pulse 3s infinite;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="eventRegistrationApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Event Registration</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-controller="RegistrationController as regCtrl">
+
+    <h1>Music Festival Registration</h1>
+
+    <!-- Event Details -->
+    <div class="event-details">
+        <h2>{{ regCtrl.event.name }}</h2>
+        <p><strong>Date:</strong> {{ regCtrl.event.date }}</p>
+        <p><strong>Time:</strong> {{ regCtrl.event.time }}</p>
+        <p><strong>Location:</strong> {{ regCtrl.event.location }}</p>
+        <p>{{ regCtrl.event.description }}</p>
+    </div>
+
+    <!-- Registration Form -->
+    <h3>Register for the Event</h3>
+    <form ng-submit="regCtrl.register()">
+        <label>Name:</label>
+        <input type="text" ng-model="regCtrl.attendee.name" required><br>
+        <label>Email:</label>
+        <input type="email" ng-model="regCtrl.attendee.email" required><br>
+        <button type="submit" class="goth-button">Register</button>
+    </form>
+
+    <!-- Session Selection -->
+    <h3>Music Sessions</h3>
+    <div class="sessions" ng-repeat="session in regCtrl.sessions">
+        <h4>{{ session.name }}</h4>
+        <p><strong>Band:</strong> {{ session.band }}</p>
+        <p><strong>Time:</strong> {{ session.time }}</p>
+        <p>{{ session.description }}</p>
+        <label>
+            <input type="checkbox" ng-model="session.selected" ng-change="regCtrl.updateFees()"> Select
+        </label>
+    </div>
+
+    <!-- Fees and Payment -->
+    <h3>Registration Fees</h3>
+    <p>Total: ${{ regCtrl.totalFees() }}</p>
+    <button ng-click="regCtrl.pay()" class="goth-button">Proceed to Payment</button>
+
+    <!-- Payment Modal -->
+    <div class="payment-modal" ng-show="regCtrl.showPaymentModal">
+        <h2>Payment</h2>
+        <p>Total to Pay: ${{ regCtrl.totalFees() }}</p>
+        <label>Card Number:</label>
+        <input type="text" placeholder="**** **** **** 1234"><br>
+        <label>Expiration Date:</label>
+        <input type="text" placeholder="MM/YY"><br>
+        <label>CVC:</label>
+        <input type="text" placeholder="123"><br>
+        <button ng-click="regCtrl.confirmPayment()" class="goth-button">Confirm Payment</button>
+        <button ng-click="regCtrl.cancelPayment()" class="goth-button">Cancel</button>
+    </div>
+
+</body>
+</html>
